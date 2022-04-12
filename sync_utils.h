@@ -1,6 +1,6 @@
-#include "support.h"
-#include "utils.h"
+#include <sys/time.h>
 #include <time.h>
+#include "utils.h"
 
 #define REPEAT 17.0
 #define ITER_LIMIT 60UL
@@ -24,6 +24,13 @@
 #define NEXT_IDX_VAL 1
 #define DEF_VAL -1LL
 #define BUCKETS 42
+
+
+typedef struct {
+    struct timeval startTime;
+    struct timeval endTime;
+} Timer;
+
 
 void startTime (Timer* timer) {
     gettimeofday (&(timer->startTime), NULL);

@@ -20,6 +20,7 @@ __global__ void Trojan (unsigned long *trojan, unsigned long *out, unsigned long
     for (k = 0; k < BITS_TO_SEND; k++) {
 
         p = s3;
+        /* Change here to change the message. Rightt now, it's all 1s */
         if (1/*k % 2 == 1*/) {
             /* Do nothing or wait for some time? */
         } else {
