@@ -1,7 +1,7 @@
 # (Mis)managed: A Novel TLB-based Covert Channel on GPUs
 This repository gives the implementation of proof-of-concept code used to evaluate a TLB-based covert channel on NVIDIA GPUs.
 We also provide the files used to reverse-engineer the TLB hierarchy of the GPUs.
-We evaluated this work on an NVIDIA GTX 1080Ti
+We evaluated this work on an NVIDIA GTX 1080Ti.
 
 This work appeared in the proceedings of the 16th ACM Asia Conference on Computer and Communications Security. For more details, please refer https://doi.org/10.1145/3433210.3453077
 
