@@ -25,9 +25,14 @@ nvidia-cuda-mps-control -d
 # Disable MPS
 echo quit | nvidia-cuda-mps-control
 ```
+Alternatively, can use the ```runner``` script present in the root directory of the repository.
 
 ### outputs directory
 This directory lists example outputs we observed on using the covert channel
+
+### scripts directory
+This directory contains some utility scripts to decode the messages transmitted by the trojan.
+For example, ```python scripts/decode.py spy.txt``` will decode the message to binary form.
 
 ### aggregate.cu
 This file was used to reverse-engineer the GPU's TLB hierarchy using Unified Memory feature in CUDA. It traverses a range of virtual address region at a stride. All parameters are provided as arguments.

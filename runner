@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# There are instances of failures in trojan, we use a dummy for that!
+# cat dummy.txt > trojan.txt
+
+./spy > spy.txt &
+spy_pid=$!
+./trojan > trojan.txt &
+tro_pid=$!
+
+sleep 1
+# Make sure trojan does not survive for next run
+# Check if spy is still running, do this for 10 seconds
+# After 20 seconds kill 'em both!
+counter=0
+while [ $counter -le 20 ]
+do
+    if [ -d "/proc/$spy_pid" ]; then
+        sleep 3
+        ((counter++))
+    else
+        break
+    fi
+done
+
+kill -9 $tro_pid
+kill -9 $spy_pid
