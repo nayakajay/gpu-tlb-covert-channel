@@ -23,7 +23,7 @@ __global__ void Trojan (unsigned long *trojan, unsigned long *out, unsigned long
         /* Change here to change the message. Rightt now, it's all 1s. 
            Encoding scheme: a high latency (above THRESHOLD) is considered 0 
                             else is a 1. */
-        if (1/*k % 2 == 1*/) {
+        if (k % 2 == 1) {
             /* Do nothing or wait for some time? */
         } else {
             for (i = 0; i < its2 * REPEAT; i++) {
