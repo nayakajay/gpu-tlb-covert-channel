@@ -26,6 +26,9 @@ nvidia-cuda-mps-control -d
 echo quit | nvidia-cuda-mps-control
 ```
 
+### outputs directory
+This directory lists example outputs we observed on using the covert channel
+
 ### aggregate.cu
 This file was used to reverse-engineer the GPU's TLB hierarchy using Unified Memory feature in CUDA. It traverses a range of virtual address region at a stride. All parameters are provided as arguments.
 
