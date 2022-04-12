@@ -1,13 +1,5 @@
-/******************************************************************************
- *cr
- *cr            (C) Copyright 2010 The Board of Trustees of the
- *cr                        University of Illinois
- *cr                         All Rights Reserved
- *cr
- ******************************************************************************/
-
-#ifndef __FILEH__
-#define __FILEH__
+#ifndef __SUPPH__
+#define __SUPPH__
 
 #include <sys/time.h>
 
