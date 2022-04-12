@@ -12,7 +12,7 @@ The file used to send (Trojan) content. It provides a multi-threadblock implemen
 The file used to receive (SPY) content. It provides a multi-threadblock implementation for the receiver.
 
 ### sync_utils.h
-This file provides configurations and builds access patterns which is used by ```spy.cu``` and ```trojan.cu``` for building the covert channel.
+This file provides configurations (empirically decided) and builds access patterns (using indexing function of TLBs) which are used by ```spy.cu``` and ```trojan.cu``` for using the TLB-based covert channel.
 
 Usage:
 ```
@@ -27,7 +27,7 @@ echo quit | nvidia-cuda-mps-control
 ```
 
 ### aggregate.cu
-This file enables the reverse-engineering of GPU TLBs using Unified Memory feature in CUDA. It traverses a range virtual address regiob at a stride. Both provided as an argument.
+This file was used to reverse-engineer the GPU's TLB hierarchy using Unified Memory feature in CUDA. It traverses a range of virtual address region at a stride. All parameters are provided as arguments.
 
 Usage:
 ```
@@ -36,7 +36,7 @@ nvcc -Xptxas -dscm=wt -Xptxas -dlcm=cg -arch=sm_61 aggregate.cu -o agg
 ```
 
 ### tlb.cu
-This file performs similar to ```aggregate.cu```, but provides fine-grained visibility of each access performed in the strided access pattern. This file was used in reverse-engineering the hash-function used for indexing into the TLB.
+This file performs accesses similar to ```aggregate.cu```, but provides fine-grained visibility of each access in the strided access pattern. This file was used to reverse-engineer the hash-function used for indexing into the TLB.
 
 Usage:
 ```
