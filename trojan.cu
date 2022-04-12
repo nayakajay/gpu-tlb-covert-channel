@@ -20,7 +20,7 @@ __global__ void Trojan (unsigned long *trojan, unsigned long *out, unsigned long
     for (k = 0; k < BITS_TO_SEND; k++) {
 
         p = s3;
-        if (k % 2 == 1) {
+        if (1/*k % 2 == 1*/) {
             /* Do nothing or wait for some time? */
         } else {
             for (i = 0; i < its2 * REPEAT; i++) {
